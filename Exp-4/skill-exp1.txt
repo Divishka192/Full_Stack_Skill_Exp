@@ -1,0 +1,98 @@
+Task 1: Create project folder, initialize Git, configure user
+# Create project folder
+mkdir git-lab-project
+cd git-lab-project
+
+# Initialize Git repository
+git init
+
+# Configure Git username and email
+git config --global user.name "Your Name"
+git config --global user.email "yourmail@example.com"
+
+# Verify configuration
+git config --list
+
+Task 2: Create files, check status, stage them
+# Create files
+touch main.java notes.txt
+
+
+Add sample content
+
+main.java
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Git World");
+    }
+}
+
+
+notes.txt
+
+This project demonstrates basic Git operations.
+
+# Check repository status
+git status
+
+# Add files to staging area
+git add main.java notes.txt
+
+# Verify staging
+git status
+
+Task 3: Commit staged files
+git commit -m "Initial commit: added main.java and notes.txt"
+
+Task 4: Create GitHub repository & push code
+
+Go to GitHub
+
+Click New Repository
+
+Name it (example: git-lab-project)
+
+Do NOT initialize with README
+
+# Connect local repo to GitHub
+git remote add origin https://github.com/username/git-lab-project.git
+
+# Push changes
+git branch -M main
+git push -u origin main
+
+Task 5: Create first branch (feature-update)
+# Create and switch to branch
+git checkout -b feature-update
+
+
+Modify notes.txt
+
+Feature Update:
+- Added new feature description
+
+git add notes.txt
+git commit -m "Added feature update notes"
+
+Task 6: Create second branch (bug-fix)
+git checkout main
+git checkout -b bug-fix
+
+
+Modify main.java
+
+System.out.println("Hello Git World - Bug Fixed");
+
+git add main.java
+git commit -m "Fixed output message bug"
+
+Task 7: Merge branches into main
+# Switch to main
+git checkout main
+
+# Merge feature-update
+git merge feature-update
+
+# Merge bug-fix
+git merge bug-fix
